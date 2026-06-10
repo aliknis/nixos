@@ -8,8 +8,6 @@
 {
   # Hyprland
   programs.hyprland.enable = true;
-  # programs.niri.enable = true;
-
   # Screen lock
   programs.hyprlock.enable = true; # Lockscreen
   # Bar
@@ -21,9 +19,10 @@
     "application/pdf" = [ "org.pwmt.zathura.desktop" ];
   };
 
+  programs.yazi.enable = true; # file manager
   # Set yazi as default file chooser
   xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-hyprland
+    # pkgs.xdg-desktop-portal-hyprland
     pkgs.xdg-desktop-portal-termfilechooser
   ];
   xdg.portal.config.hyprland.FileChooser = [ "termfilechooser" ];
@@ -33,7 +32,9 @@
   environment.systemPackages = with pkgs; [
     # Core utilities
     (rofi.override { plugins = [ rofi-calc ]; }) # Application launcher for Wayland with plugins
+    libnotify
     mako # Notification daemon
+
     awww # wallpaper daemon
     cliphist # clipboard manager
 
@@ -52,7 +53,7 @@
     mpv # Video player
     imv # image viewer
     zathura # pdf viewer
-    yazi # file manager
+    # yazi
 
     # Wayland-specific tools
     grim # Screenshot utility

@@ -45,21 +45,16 @@
   home.file =
     lib.genAttrs
       [
-        ".config/fastfetch"
         ".config/hypr"
-        ".config/niri"
         ".config/kitty"
         ".config/mako"
         ".config/mpv"
-        ".config/mpd"
         ".config/nvim"
         ".config/qutebrowser"
         ".config/rofi"
-        ".config/task"
         ".config/waybar"
         ".config/yt-dlp"
         ".config/zathura"
-        ".config/YouTube Music/config.json"
 
         ".aliases"
         ".bashrc"

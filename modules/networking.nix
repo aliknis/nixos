@@ -16,7 +16,6 @@
 
     # Open ports in the firewall
     allowedTCPPorts = [ ];
-
     allowedUDPPorts = [ ];
 
   };

@@ -17,6 +17,10 @@
       user.name = "titanknis";
       user.email = "titanknis@gmail.com";
       init.defaultBranch = "main";
+
+      gpg.format = "ssh";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
+      commit.gpgsign = true;
     };
   };
 

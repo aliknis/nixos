@@ -8,20 +8,11 @@
 {
   # Programs
   programs.gnupg.agent.enable = true;
-  programs.yazi.enable = true; # File manager
-  #
+
+  programs.localsend.enable = true; # local file sharing between devices
+
   # # Fonts
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
-
-  services.ollama.enable = true;
-  # services.librechat = {
-  #   enable = true;
-  #   host = "127.0.0.1";
-  #   port = 11434;
-  #   environment = {
-  #     HOME = "/var/lib/librechat";
-  #   };
-  # };
 
   # System packages
   environment.systemPackages = with pkgs; [
@@ -42,7 +33,7 @@
     wget
 
     # tailwindcss_4
-    # hugo
+    hugo
     # supabase-cli
     gh
     glab

@@ -1,5 +1,5 @@
 * {
-  font:   "JetBrains Mono Nerd Font 12";
+  font:   "JetBrains Mono Nerd Font 14";
   bg0            : #282828;
   bg1            : #3c3836;
   bg2            : #504945;
@@ -42,9 +42,9 @@
   aqua           : @bright-aqua;   // or @neutral-aqua
   orange         : @bright-orange; // or @neutral-orange
 
-  accent         : @bright-green;
+  accent         : @green;
   urgent         : @red;
-  text-color     : @fg0;
+  text-color     : @orange;
   background-color : transparent;
   margin  : 0;
   padding : 0;
@@ -54,8 +54,8 @@
 window {
   background-color: @bg0;
   border: 4px;
-  border-color: @green;
-  border-radius: 8px;
+  border-color: @orange;
+  // border-radius: 8px;
   children: [ mainbox ];
 }
 
@@ -93,10 +93,10 @@ textbox {
 }
 
 listview {
-  lines        : 12;
+  lines        : 6;
   columns      : 1;
-    padding: 8px;
-    spacing: 4px;
+  padding: 8px;
+  // spacing: 4px;
 }
 
 element {
@@ -128,7 +128,6 @@ element selected {
 
 element-text selected{
   text-color: @accent;
-
 }
 
 element-icon selected{

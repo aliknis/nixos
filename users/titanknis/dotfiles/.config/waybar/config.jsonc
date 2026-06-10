@@ -9,13 +9,6 @@
   "margin-bottom": 0,
   "margin-left": 2,
 
-  // "modules-left": [
-  //
-  // "hyprland/workspaces",
-  // "niri/workspaces",
-  // "cava",
-  // ],
-
   "modules-center": [
     //
     "clock",

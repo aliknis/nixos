@@ -4,7 +4,6 @@
 
 # General shortcuts
 alias q='exit'
-alias y='yazi'
 alias v='nvim'
 alias cd='z'
 alias cat='bat'
@@ -12,3 +11,17 @@ alias cat='bat'
 # Directory listing
 alias ls='eza --icons=auto'
 alias lt='eza --icons=auto --tree'
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
+
+# Temporary frequently used aliases
+
+# connect to adb wirelessly
+alias adbc='adb tcpip 5000; adb connect $(ip route | awk "NR==1 {print \$3}"):5000'
+

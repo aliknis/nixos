@@ -2,7 +2,7 @@
 parts=()
 
 # Time
-parts+=("  $(date +%H:%M)")
+parts+=(" $(date +%H:%M)")
 
 # Battery
 pct=$(cat /sys/class/power_supply/BAT0/capacity 2>/dev/null) || true
@@ -26,4 +26,4 @@ ssid=$(nmcli -t -f active,ssid dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2)
 
 # Join and send
 text=$(printf "  |  %s" "${parts[@]}")
-notify-send -a status "${text:4}"
+notify-send -a status "${text:4}" $@

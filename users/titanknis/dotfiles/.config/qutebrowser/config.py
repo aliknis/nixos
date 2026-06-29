@@ -55,6 +55,9 @@ c.content.blocking.adblock.lists = [
 
 # ─── Privacy / Security ────────────────────────────────────────────────────────
 
+c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"  # to allow for google account login
+
+
 # Disable JavaScript by default
 # c.content.javascript.enabled = True
 
@@ -104,14 +107,11 @@ c.editor.command = ["kitty", "nvim", "{}"]
 c.url.searchengines = {
     # note - if you use duckduckgo, you can make use of its built in bangs, of which there are many! https://duckduckgo.com/bangs
     "DEFAULT": "https://duckduckgo.com/?q={}",
-    "!chat": "https://chatgpt.com/?model=auto&q={}",
     "!google": "https://www.google.com/search?q={}",
-    "!yt": "https://www.youtube.com/results?search_query={}",
+    "!yt": "https://invidious.tiekoetter.com/results?search_query={}",
     "!nixpkgs": "https://search.nixos.org/packages?channel=unstable&query={}",
     "!nixopts": "https://search.nixos.org/options?channel=unstable&query={}",
     "!homeopts": "https://home-manager-options.extranix.com/?query={}",
-    "!gh": "https://github.com/search?o=desc&q={}&s=stars",
-    "!ud": "https://www.urbandictionary.com/define.php?term={}",
 }
 
 # c.completion.open_categories = [
@@ -126,26 +126,26 @@ c.url.searchengines = {
 
 # # Bindings for normal mode
 # NOTE: Tip: create and use ~/.config/mpv/mpv.conf ~/.config/yt-dlp/config to simplify both these commands and your life
-config.bind(";m", "hint links spawn mpv {hint-url}")
-config.bind(",m", "spawn mpv {url}")
+config.bind(";w", "hint links spawn mpv {hint-url}")
+config.bind(",w", "spawn mpv {url}")
 
 config.bind(
     ";v",
     "hint links spawn kitty -e yt-dlp -P '~/Downloads/Youtube' {hint-url}",
 )
 config.bind(
-    ",v",
-    "           spawn kitty -e yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best' -P '~/Downloads/Youtube'  {url}",
+    ",d",
+    "           spawn kitty -e yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best' -P '~/Videos' {url}",
 )
 
-config.bind(
-    ";a",
-    "hint links spawn kitty -e yt-dlp -x --audio-quality 0 -P '~/Downloads/Youtube/music'  {hint-url}",
-)
-config.bind(
-    ",a",
-    "           spawn kitty -e yt-dlp -x --audio-quality 0 -P '~/Downloads/Youtube/music'  {url}",
-)
+# config.bind(
+#     ";a",
+#     "hint links spawn kitty -e yt-dlp -x --audio-quality 0 -P '~/Music' {hint-url}",
+# )
+# config.bind(
+#     ",a",
+#     "           spawn kitty -e yt-dlp -x --audio-quality 0 -P '~/Music'  {url}",
+# )
 
 
 # config.bind("xb", "config-cycle statusbar.show always never")
@@ -156,5 +156,4 @@ config.bind(
 # )
 
 # Example: Canva uses Ctrl+Alt+p
-config.bind("<F5>", "fake-key <Ctrl-Alt-p>")
-# config.bind(".", "spawn --userscript toggle-screen.sh")
+# config.bind("<F5>", "fake-key <Ctrl-Alt-p>")

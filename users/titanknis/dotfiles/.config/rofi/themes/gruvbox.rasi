@@ -42,9 +42,9 @@
   aqua           : @bright-aqua;   // or @neutral-aqua
   orange         : @bright-orange; // or @neutral-orange
 
-  accent         : @green;
+  accent         : @orange;
   urgent         : @red;
-  text-color     : @orange;
+  text-color     : @green;
   background-color : transparent;
   margin  : 0;
   padding : 0;
@@ -73,7 +73,7 @@ inputbar {
 }
 
 prompt {
-    text-color: @fg2;
+    text-color: @green;
 }
 
 entry {

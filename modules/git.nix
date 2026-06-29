@@ -14,7 +14,7 @@
       delta.line-numbers = true;
       merge.conflictStyle = "zdiff3";
 
-      user.name = "titanknis";
+      user.name = "aliknis";
       user.email = "titanknis@gmail.com";
       init.defaultBranch = "main";
 

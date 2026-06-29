@@ -52,6 +52,8 @@ hl.window_rule({
 
 -- Floating Windows
 hl.window_rule({ match = { class = "^.*blueman.*$" }, float = true })
+hl.window_rule({ match = { class = "^org.keepassxc.KeePassXC$" }, float = true, size = "1000 700" })
+-- hl.window_rule({ match = { class = "^.*KeePass.*$" }, float = true, center = true })
 hl.window_rule({ match = { class = "^org.pulseaudio.pavucontrol$" }, float = true })
 
 -- Display/Image Viewer

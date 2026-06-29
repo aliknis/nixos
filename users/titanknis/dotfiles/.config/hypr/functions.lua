@@ -7,11 +7,9 @@ end)
 local function toggle_kanata()
 	hl.exec_cmd([[
 		if systemctl is-active --quiet kanata-default.service; then
-			systemctl stop kanata-default.service
-			notify-send -a stat 'Kanata off'
+			systemctl stop kanata-default.service && notify-send -a stat 'Kanata off'
 		else
-			systemctl start kanata-default.service
-			notify-send -a stat 'Kanata on'
+			systemctl start kanata-default.service && notify-send -a stat 'Kanata on'
 		fi
 	]])
 end

@@ -13,7 +13,6 @@ local submod = "ALT"
 
 local terminal = "kitty"
 local fileManager = "yazi"
-local editor = "nvim"
 local browser = "qutebrowser"
 
 ---------------
@@ -23,12 +22,10 @@ local browser = "qutebrowser"
 local menu = "rofi -show drun"
 local window = "rofi -show window"
 local calc = "rofi -show calc -p '󱖦' -no-show-match -no-sort -calc-command 'wtype '{result}' && wl-copy {result}'"
-local passmenu = "~/.config/hypr/scripts/passMenu.sh"
 local powermenu = "~/.config/hypr/scripts/powerMenu.sh"
 local networkmenu = "~/.config/hypr/scripts/networkMenu.sh"
 local emojimenu = "~/.config/hypr/scripts/emojiMenu.sh"
 local wallpapermenu = "~/.config/hypr/scripts/wallpaperMenu.sh"
-local timer = "~/.config/hypr/scripts/timerMenu.sh"
 
 -----------------
 ---- actions ----
@@ -50,15 +47,17 @@ local extracttext = 'grim -g "$(slurp)" - | tesseract stdin stdout | wl-copy'
 hl.bind(mainMod .. " + delete", hl.dsp.exit())
 hl.bind("CTRL + ALT + delete", hl.dsp.exec_cmd("shutdown now"))
 hl.bind("CTRL + ALT + k", fn.toggle_kanata)
+-- hl.bind(submod .. " + k", fn.toggle_touchpad)
 hl.bind(mainMod .. " + h", hl.dsp.exec_cmd("systemctl hibernate"), { locked = true })
 hl.bind(mainMod .. " + l", hl.dsp.exec_cmd(lockscreen))
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd(lockscreen), { locked = true })
 
 hl.bind(mainMod .. " + t", hl.dsp.exec_cmd(terminal))
--- hl.bind(mainMod .. " + c", hl.dsp.exec_cmd(terminal .. " nvim -c ':CompetiTest receive contest'"))
 hl.bind(mainMod .. " + y", hl.dsp.exec_cmd(terminal .. " " .. fileManager))
 hl.bind(mainMod .. " + f", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + b", hl.dsp.exec_cmd("pkill waybar || waybar"))
+hl.bind(mainMod .. " + k", hl.dsp.exec_cmd("pkill keepassxc || keepassxc"))
+hl.bind(submod .. " + k", hl.dsp.exec_cmd("pkill keepassxc || keepassxc"))
 hl.bind(submod .. " + s", hl.dsp.exec_cmd("~/.config/hypr/scripts/status.sh"), { repeating = true })
 hl.bind(submod .. " + m", hl.dsp.exec_cmd("makoctl dismiss"))
 hl.bind(submod .. " + b", hl.dsp.exec_cmd(earphones))
@@ -70,9 +69,7 @@ hl.bind(submod .. " + SHIFT + r", hl.dsp.exec_cmd("timeout 2s bash ~/.config/hyp
 
 hl.bind(submod .. " + SPACE", hl.dsp.exec_cmd("pkill rofi || " .. menu))
 hl.bind(submod .. " + q", hl.dsp.exec_cmd("pkill rofi || " .. calc))
-hl.bind(submod .. " + t", hl.dsp.exec_cmd("pkill rofi || " .. timer))
 hl.bind(submod .. " + w", hl.dsp.exec_cmd("pkill rofi || " .. window))
-hl.bind(submod .. " + p", hl.dsp.exec_cmd("pkill rofi || " .. passmenu))
 hl.bind(submod .. " + e", hl.dsp.exec_cmd("pkill rofi || " .. emojimenu))
 hl.bind(submod .. " + backspace", hl.dsp.exec_cmd("pkill rofi || " .. powermenu))
 hl.bind(submod .. " + d", hl.dsp.exec_cmd("pkill rofi || " .. networkmenu))
@@ -224,7 +221,6 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
-hl.bind(mainMod .. " + k", fn.toggle_touchpad)
 
 ------------------
 ---- gestures ----

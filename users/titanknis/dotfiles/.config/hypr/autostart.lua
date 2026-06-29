@@ -25,4 +25,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("awww-daemon")
 	hl.exec_cmd("awww img ~/Pictures/Wallpapers/i-touch-this.jpg") -- now i prefer a static wallpaper
 	-- hl.exec_cmd("~/.config/hypr/scripts/wallpaper.sh") -- Random wallpaper(got bored of it)
+
+	hl.exec_cmd("~/.config/hypr/scripts/status.sh -t 5000")
 end)

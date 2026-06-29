@@ -103,6 +103,7 @@ function RunCode()
 			outfile
 		),
 		yacc = string.format('cd "%s" && bison -d %s', dir, file),
+		nix = string.format("sudo nixos-rebuild switch --flake ~/nixos#asus"),
 	}
 
 	if has_package then

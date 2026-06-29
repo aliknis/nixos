@@ -14,6 +14,10 @@
   # # Fonts
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
+  environment.variables = {
+    QT_QPA_PLATFORM = "wayland"; # for keepassxc
+  };
+
   # System packages
   environment.systemPackages = with pkgs; [
     # Terminal
@@ -28,56 +32,36 @@
     tldr
     wtype
     # taskwarrior3
-    jq # rofi-timer script dependency
+    # jq # rofi-timer script dependency
     curl
     wget
 
-    # tailwindcss_4
-    hugo
-    # supabase-cli
-    gh
-    glab
-    repomix
-
-    opencode
-
-    # DB
-    sqlite
-    postgresql
-
-    flex
-    bison
+    # hugo
+    # gh
+    # glab
+    #
+    # opencode
 
     # Security & privacy
-    (pass.withExtensions (ext: [ ext.pass-otp ]))
-    zbar
+    # (pass.withExtensions (ext: [ ext.pass-otp ]))
+    # zbar
+    keepassxc
+    # keepass
 
     # Media tools
     yt-dlp
     ffmpeg
 
     # Apps
-    libreoffice
-    qutebrowser
+    # libreoffice
     # firefox
+    qutebrowser
     signal-desktop
-
-    # github-desktop
-
-    # audacity
+    # freetube
 
     # wineWowPackages.full
     # winetricks
     # asciinema
-
-    # Music player
-    # tauon
-    # kew
-    # musikcube
-
-    # mpd
-    # rmpc
-    # mpc
 
     # Fun
     # sl
@@ -102,12 +86,12 @@
 
   ];
 
-  nixpkgs.config.android_sdk.accept_license = true;
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      # "discord"
-    ];
+  # nixpkgs.config.android_sdk.accept_license = true;
+  # nixpkgs.config.allowUnfreePredicate =
+  #   pkg:
+  #   builtins.elem (lib.getName pkg) [
+  #     # "discord"
+  #   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
   #   "ciscoPacketTracer8-8.2.2"

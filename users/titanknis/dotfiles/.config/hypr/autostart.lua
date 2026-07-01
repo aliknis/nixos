@@ -10,6 +10,7 @@
 hl.on("hyprland.start", function()
 	-- System Services
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
+	hl.exec_cmd("hyprsunset")
 
 	-- System Tray
 	-- hl.exec_cmd("waybar")

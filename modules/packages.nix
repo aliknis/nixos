@@ -39,6 +39,7 @@
     # hugo
     # gh
     # glab
+    opentofu
     #
     # opencode
 

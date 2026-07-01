@@ -72,20 +72,23 @@ local function mic_mute_osd()
 	)
 end
 
--- Brightness OSD
 local function brightness_osd(dir)
-	local d
-	if dir == "up" then
-		d = "set 5%+"
-	else
-		d = "set 5%-"
-	end
+	local d = dir == "up" and "set 5%+" or "set 5%-"
 	return function()
 		hl.exec_cmd(
-			[[brightnessctl -e4 -n2 ]]
-				.. d
-				.. [[ && notify-send -a stat "brightness $(brightnessctl -m | awk -F',' '{printf "%.2f", $3/$5}')"]]
+			string.format(
+				[[brightnessctl %s && notify-send -a stat "brightness $(brightnessctl -m | awk -F',' '{printf "%%.2f", $3/$5}')"]],
+				d
+			)
 		)
+	end
+end
+
+-- Tempurature OSD
+local function temperature_osd(dir)
+	local d = dir == "up" and "temperature +1000" or dir == "down" and "temperature -1000" or dir
+	return function()
+		hl.exec_cmd(string.format([[hyprctl hyprsunset %s && notify-send -a stat "%s"]], d, d))
 	end
 end
 
@@ -99,4 +102,5 @@ return {
 	volume_osd = volume_osd,
 	mic_mute_osd = mic_mute_osd,
 	brightness_osd = brightness_osd,
+	temperature_osd = temperature_osd,
 }

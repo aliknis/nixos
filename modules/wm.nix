@@ -47,13 +47,13 @@
     # Hyprland-specific
     hyprpicker
     hyprpolkitagent # Authentication agent
+    hyprsunset
 
     # Terminal and applications
     kitty # Terminal emulator
     mpv # Video player
     imv # image viewer
     zathura # pdf viewer
-    # yazi
 
     # Wayland-specific tools
     grim # Screenshot utility

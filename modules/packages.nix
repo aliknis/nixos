@@ -7,9 +7,12 @@
 }:
 {
   # Programs
-  programs.gnupg.agent.enable = true;
+  # programs.gnupg.agent.enable = true;
 
-  programs.localsend.enable = true; # local file sharing between devices
+  # programs.localsend.enable = true; # local file sharing between devices
+
+  programs.fuse.enable = true;
+  services.udisks2.enable = true;
 
   # # Fonts
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
@@ -30,34 +33,33 @@
     bat
     fzf
     tldr
-    wtype
-    # taskwarrior3
-    # jq # rofi-timer script dependency
     curl
+    wtype
     wget
 
     # hugo
     # gh
     # glab
-    opentofu
+    # opentofu
+    # ansible
     #
     # opencode
 
     # Security & privacy
     # (pass.withExtensions (ext: [ ext.pass-otp ]))
     # zbar
-    keepassxc
+    # keepassxc
     # keepass
 
     # Media tools
-    yt-dlp
-    ffmpeg
+    # yt-dlp
+    # ffmpeg
 
     # Apps
     # libreoffice
     # firefox
-    qutebrowser
-    signal-desktop
+    # qutebrowser
+    # signal-desktop
     # freetube
 
     # wineWowPackages.full
@@ -81,10 +83,6 @@
     # clock-rs
     # cool-retro-term
     # lolcat
-
-    # Unfree
-    # discord
-
   ];
 
   # nixpkgs.config.android_sdk.accept_license = true;
@@ -93,11 +91,6 @@
   #   builtins.elem (lib.getName pkg) [
   #     # "discord"
   #   ];
-
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "ciscoPacketTracer8-8.2.2"
-  # ];
-
   # Commented packages for reference
   /*
     # Office Suite

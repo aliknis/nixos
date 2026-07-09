@@ -1,51 +1,3 @@
--- -- functions.lua
---
--- local term_buf = nil
--- local term_win = nil
---
--- function TermToggle()
--- 	-- Window is open → hide it
--- 	if term_win and vim.api.nvim_win_is_valid(term_win) then
--- 		vim.api.nvim_win_hide(term_win)
--- 		term_win = nil
--- 		return
--- 	end
---
--- 	-- Buffer exists but window is closed → re-open it
--- 	if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
--- 		vim.cmd("botright split")
--- 		term_win = vim.api.nvim_get_current_win()
--- 		vim.api.nvim_win_set_buf(term_win, term_buf)
--- 		vim.cmd("resize 15")
--- 		vim.cmd("startinsert")
--- 		return
--- 	end
---
--- 	-- First time → create terminal
--- 	vim.cmd("botright split")
--- 	vim.cmd("term")
--- 	vim.cmd("resize 15")
--- 	term_buf = vim.api.nvim_get_current_buf()
--- 	term_win = vim.api.nvim_get_current_win()
--- 	vim.cmd("startinsert")
--- end
---
--- function TermCmd(cmd)
--- 	-- Window is open → Run cmd
--- 	if term_win and vim.api.nvim_win_is_valid(term_win) then
--- 		local chan = vim.bo[term_buf].channel
--- 		vim.api.nvim_chan_send(chan, cmd .. "\n")
--- 		vim.cmd("wincmd j")
--- 		vim.cmd("startinsert")
--- 		return
--- 	end
---
--- 	-- First time → create terminal
--- 	TermToggle()
--- 	local chan = vim.bo[term_buf].channel
--- 	vim.api.nvim_chan_send(chan, cmd .. "\n")
--- end
-
 function RunCode()
 	-- Get file info
 	local filetype = vim.bo.filetype
@@ -104,6 +56,7 @@ function RunCode()
 		),
 		yacc = string.format('cd "%s" && bison -d %s', dir, file),
 		nix = string.format("sudo nixos-rebuild switch --flake ~/nixos#asus"),
+		terraform = string.format("cd %s && tofu validate", dir),
 	}
 
 	if has_package then

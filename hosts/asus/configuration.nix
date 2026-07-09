@@ -25,7 +25,7 @@
     ../../modules/nvim.nix # Text editor
     ../../modules/git.nix # Git
     ../../modules/zsh.nix # Shell
-    ../../modules/wm.nix # Window Manager
+    ../../modules/hyprland.nix # Window Manager
 
     # --- Virtual Machine Configuration ---
     ../../modules/virtualisation.nix

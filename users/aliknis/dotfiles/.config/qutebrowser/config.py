@@ -131,7 +131,7 @@ config.bind(",w", "spawn mpv {url}")
 
 config.bind(
     ";v",
-    "hint links spawn kitty -e yt-dlp -P '~/Downloads/Youtube' {hint-url}",
+    "hint links spawn kitty -e yt-dlp -P '~/Videos' {hint-url}",
 )
 config.bind(
     ",d",

@@ -9,7 +9,7 @@
 {
   home.username = username;
   home.homeDirectory = "/home/${username}";
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.11";
   programs.home-manager.enable = true;
 
   #############
@@ -30,11 +30,7 @@
 
   home.pointerCursor = {
     name = "Bibata-Modern-Ice";
-    # name = "Bibata-Modern-Amber";
-    # name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
-    # size = 32;
-    # package = pkgs.catppuccin-cursors.mochaLight;
     hyprcursor.enable = true;
   };
 
@@ -62,9 +58,9 @@
         ".clang-format"
       ]
       (name: {
-        # source = ./dotfiles/${name}; # Default: Immutable store path (works anywhere, requires rebuild for changes)
+        source = ./dotfiles/${name}; # Default: Immutable store path (works anywhere, requires rebuild for changes)
 
         # Alternative: Editable symlink (requires flake in ~/nixos, changes apply instantly)
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/users/${username}/dotfiles/${name}";
+        # source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/users/${username}/dotfiles/${name}";
       });
 }

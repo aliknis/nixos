@@ -58,7 +58,9 @@ hl.bind(mainMod .. " + f", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + b", hl.dsp.exec_cmd("pkill waybar || waybar"))
 hl.bind(mainMod .. " + k", hl.dsp.exec_cmd("pkill keepassxc || keepassxc"))
 hl.bind(submod .. " + k", hl.dsp.exec_cmd("pkill keepassxc || keepassxc"))
-hl.bind(submod .. " + s", hl.dsp.exec_cmd("~/.config/hypr/scripts/status.sh"), { repeating = true })
+hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("~/.config/hypr/scripts/status.sh"), { repeating = true })
+hl.bind(submod .. " + t", hl.dsp.exec_cmd("~/.config/hypr/scripts/status.sh"), { repeating = true }) -- mod + t as of time
+hl.bind(submod .. " + s", hl.dsp.exec_cmd("~/.config/hypr/scripts/status.sh"), { repeating = true }) -- mod + s as of status
 hl.bind(submod .. " + m", hl.dsp.exec_cmd("makoctl dismiss"))
 hl.bind(submod .. " + b", hl.dsp.exec_cmd(earphones))
 hl.bind(submod .. " + SHIFT + r", hl.dsp.exec_cmd("timeout 2s bash ~/.config/hypr/scripts/wallpaper.sh"))

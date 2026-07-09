@@ -12,14 +12,6 @@ if [[ "$pct" ]]; then
     parts+=("$icon $pct%")
 fi
 
-# Volume
-vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null) || true
-if [[ "$vol" ]]; then
-    pct=$(awk '{print int($2*100)}' <<<"$vol")
-    if [[ "$vol" == *MUTED* ]]; then icon=""; elif ((pct <= 50)); then icon=""; else icon=""; fi
-    parts+=("$icon $pct%")
-fi
-
 # WiFi
 ssid=$(nmcli -t -f active,ssid dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2) || true
 [[ "$ssid" ]] && parts+=("  $ssid")

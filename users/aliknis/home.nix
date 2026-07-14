@@ -51,6 +51,7 @@
         ".config/waybar"
         ".config/yt-dlp"
         ".config/zathura"
+        ".config/keepassxc"
 
         ".aliases"
         ".bashrc"
@@ -58,9 +59,9 @@
         ".clang-format"
       ]
       (name: {
-        source = ./dotfiles/${name}; # Default: Immutable store path (works anywhere, requires rebuild for changes)
+        # source = ./dotfiles/${name}; # Default: Immutable store path (works anywhere, requires rebuild for changes)
 
         # Alternative: Editable symlink (requires flake in ~/nixos, changes apply instantly)
-        # source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/users/${username}/dotfiles/${name}";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/users/${username}/dotfiles/${name}";
       });
 }

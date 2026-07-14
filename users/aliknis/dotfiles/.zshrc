@@ -1,7 +1,7 @@
 # ~/.zshrc - Minimal Zsh configuration
 
 # History Settings
-HISTFILE=~/.histfile
+# HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
@@ -11,9 +11,6 @@ bindkey -v
 
 # Aliases
 source ~/.aliases
-
-# Secrets
-source ~/.secrets
 
 # FZF History Search
 fzf_history(){

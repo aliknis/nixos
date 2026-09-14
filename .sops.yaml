@@ -1,0 +1,9 @@
+keys:
+  - &admin_aliknis age18278td4unfkc6wq58w4jxhuwmtcx4gtqaecydvrk6u7umtdmrefsalrr6y
+  - &system_asus age15fnf86qhvh9m406009qz9x68zu3fqrkm2thdq5z5swfhkzxynedqw8ylph
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini|kdbx|keys)$
+    key_groups:
+      - age:
+        - *admin_aliknis
+        - *system_asus

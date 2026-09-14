@@ -1,135 +1,46 @@
+{ ... }:
 {
+  flake.nixosModules.packages = { pkgs, ... }: {
+    programs.localsend.enable = true; # Local Send
 
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-{
-  # Programs
-  # programs.gnupg.agent.enable = true;
+    fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ]; # Font
 
-  # programs.localsend.enable = true; # local file sharing between devices
+    programs.yazi.enable = true; # Yazi and use Yazi as the filePicker
 
-  programs.fuse.enable = true;
-  services.udisks2.enable = true;
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-termfilechooser ];
+    xdg.portal.config.common."org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
 
-  # # Fonts
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
+    environment.variables.QT_QPA_PLATFORM = "wayland"; # for keepassxc
+    xdg.mime.defaultApplications."application/pdf" = "org.pwmt.zathura.desktop"; # Default PDF viewer
 
-  environment.variables = {
-    QT_QPA_PLATFORM = "wayland"; # for keepassxc
+    environment.systemPackages = with pkgs; [
+      kitty
+      mpv
+      imv
+      zathura
+
+      aria2
+      wl-clipboard
+      zoxide
+      eza
+      bat
+      fzf
+      tldr
+      curl
+      wget
+
+      keepassxc
+
+      yt-dlp
+      ffmpeg
+
+      qutebrowser
+      signal-desktop
+
+      opentofu
+      opencode
+
+      libreoffice
+    ];
   };
-
-  # System packages
-  environment.systemPackages = with pkgs; [
-    # Terminal
-    kitty
-    # shell tools
-    aria2
-    wl-clipboard
-    zoxide
-    eza
-    bat
-    fzf
-    tldr
-    curl
-    wtype
-    wget
-
-    # hugo
-    # gh
-    # glab
-    # opentofu
-    # ansible
-    #
-    # opencode
-
-    # Security & privacy
-    # (pass.withExtensions (ext: [ ext.pass-otp ]))
-    # zbar
-    # keepassxc
-    # keepass
-
-    # Media tools
-    # yt-dlp
-    # ffmpeg
-
-    # Apps
-    # libreoffice
-    # firefox
-    # qutebrowser
-    # signal-desktop
-    # freetube
-
-    # wineWowPackages.full
-    # winetricks
-    # asciinema
-
-    # Fun
-    # sl
-    # fastfetch
-    # cmatrix
-    # asciiquarium
-    # fortune
-    # cowsay
-    # ponysay
-    # pipes
-    # figlet
-    # ninvaders
-    # hollywood
-    # cava
-    # cbonsai
-    # clock-rs
-    # cool-retro-term
-    # lolcat
-  ];
-
-  # nixpkgs.config.android_sdk.accept_license = true;
-  # nixpkgs.config.allowUnfreePredicate =
-  #   pkg:
-  #   builtins.elem (lib.getName pkg) [
-  #     # "discord"
-  #   ];
-  # Commented packages for reference
-  /*
-    # Office Suite
-    onlyoffice-bin
-    libreoffice
-
-    # Editing
-    krita
-    nomacs
-    obs-studio
-
-    # CLI Tools
-    disko
-    dust
-    libnotify
-    libqalculate
-    asciinema
-    asciinema-agg
-
-    # Networking
-    aria2
-    nload
-    bmon
-    btop
-
-    # Fun
-    sl
-    fastfetch
-    cmatrix
-    asciiquarium
-    fortune
-    cowsay
-    ponysay
-    pipes
-    figlet
-    ninvaders
-    hollywood
-    cava
-    cbonsai
-    clock-rs
-  */
 }

@@ -1,4 +1,12 @@
-users/titanknis/dotfiles/.config/qutebrowser/autoconfig.yml
-users/titanknis/dotfiles/.config/qutebrowser/quickmarks
-users/titanknis/dotfiles/.config/qutebrowser/bookmarks/
-users/titanknis/dotfiles/.config/qutebrowser/qsettings/
+modules/users/*/dotfiles/.config/qutebrowser/autoconfig.yml
+modules/users/*/dotfiles/.config/qutebrowser/quickmarks
+modules/users/*/dotfiles/.config/qutebrowser/bookmarks/
+modules/users/*/dotfiles/.config/qutebrowser/qsettings/
+
+secrets/Monero
+
+homelab/
+
+.Trash*/
+
+.stfolder/

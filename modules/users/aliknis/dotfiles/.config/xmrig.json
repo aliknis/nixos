@@ -1,0 +1,23 @@
+{
+  "autosave": false,
+  "background": false,
+  "colors": true,
+  "randomx": { "1gb-pages": true },
+  "cpu": {
+    "enabled": true,
+    "huge-pages": true
+  },
+  "donate-level": 0,
+  "donate-over-proxy": 0,
+  "pools": [
+    {
+      "algo": null,
+      "coin": null,
+      "url": "127.0.0.1:3333",
+      "tls": false
+    }
+  ],
+  "watch": true,
+  "pause-on-battery": false,
+  "pause-on-active": false
+}

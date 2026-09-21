@@ -21,7 +21,7 @@
           allowedIPs = [
             # "0.0.0.0/0"
             # "10.10.10.10/24"
-            "34.160.111.145/32"
+            # "34.160.111.145/32"
             # "::/0"
           ]; # full tunnel; use "10.10.10.0/24" for VPS-only access
           persistentKeepalive = 25;

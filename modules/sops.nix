@@ -12,7 +12,6 @@
 
     sops.secrets.root_password_hash.neededForUsers = true;
     sops.secrets.user_password_hash.neededForUsers = true;
-    sops.secrets.hcloud_token.owner = "${config.username}";
     sops.secrets.grafana_secret_key.owner = "grafana";
     sops.secrets.grafana_admin_password.owner = "grafana";
     sops.secrets.wireguard_private_key.owner = null;

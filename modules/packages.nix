@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nixosModules.packages = { pkgs, ... }: {
+  flake.nixosModules.packages = { pkgs, lib, ... }: {
     programs.localsend.enable = true; # Local Send
 
     fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ]; # Font
@@ -19,6 +19,7 @@
       imv
       zathura
 
+      # CLI tools
       aria2
       wl-clipboard
       zoxide
@@ -28,19 +29,17 @@
       tldr
       curl
       wget
-
-      keepassxc
-
       yt-dlp
       ffmpeg
 
+      keepassxc
+
       qutebrowser
-      signal-desktop
 
       opentofu
-      opencode
+      # opencode
 
-      libreoffice
+      # libreoffice
     ];
   };
 }

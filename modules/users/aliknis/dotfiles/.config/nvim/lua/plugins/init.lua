@@ -50,7 +50,7 @@ local plugins = {
 	require("plugins.extra.todo"),
 	require("plugins.extra.colorizer"),
 	-- require("plugins.extra.diagram"),
-	-- require("plugins.extra.vimtex"),
+	require("plugins.extra.vimtex"),
 
 	-- Competitive Programming
 	-- require("plugins.cp.competitest"),

@@ -20,6 +20,8 @@
         "/etc/NetworkManager/system-connections"
         "/var/lib/systemd/timers"
         "/var/lib/libvirt"
+        "/var/lib/docker"
+        "/var/lib/tailscale" # tailscale connections
         # "/var/lib/jellyfin/"
       ];
 

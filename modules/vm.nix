@@ -8,7 +8,10 @@
 
     programs.virt-manager.enable = true;
 
-    users.users.${config.username}.extraGroups = [ "libvirtd" ];
+    users.users.${config.username}.extraGroups = [
+      "libvirtd"
+      "kvm"
+    ];
     environment.sessionVariables.LIBVIRT_DEFAULT_URI = "qemu:///system";
 
     environment.systemPackages = with pkgs; [

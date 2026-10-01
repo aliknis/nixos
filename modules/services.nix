@@ -1,6 +1,9 @@
 { ... }:
 {
-  flake.nixosModules.services = { ... }: {
+  flake.nixosModules.services = { config, ... }: {
+
+    virtualisation.docker.enable = true; # Docker
+    users.users.${config.username}.extraGroups = [ "docker" ];
 
     services.udisks2.enable = true;
 

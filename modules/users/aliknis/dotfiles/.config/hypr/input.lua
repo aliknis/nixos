@@ -10,7 +10,7 @@
 hl.config({
 	input = {
 		-- kb_layout  = "us,us,fr,ara",
-		kb_layout = "us,ara",
+		kb_layout = "us,us,ara",
 		kb_variant = "colemak_dh",
 		kb_options = "grp:win_space_toggle,numpad:pc", -- kb_model   = "lv3:ralt_alt,grp:win_space_toggle,numpad:pc",
 		kb_model = "",

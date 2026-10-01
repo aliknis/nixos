@@ -39,7 +39,7 @@
       opentofu
       # opencode
 
-      # libreoffice
+      libreoffice
     ];
   };
 }

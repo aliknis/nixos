@@ -36,6 +36,16 @@
 
           ".config/Signal"
           ".config/syncthing"
+
+          # Android & Android Studio
+          "Android"
+          ".android"
+          ".gradle"
+          ".java"
+          ".config/Google"
+          ".local/share/Google"
+          ".cache/Google"
+
         ];
 
         files = [ ".zsh_history" ];

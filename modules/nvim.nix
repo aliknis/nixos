@@ -5,7 +5,7 @@
     programs.neovim.defaultEditor = true;
 
     environment.systemPackages = with pkgs; [
-      ripgrep
+      ripgrep # Fast search tool
       tree-sitter
 
       nixd
@@ -23,6 +23,11 @@
       sql-formatter
 
       tofu-ls # opentofu language server
+
+      # Latex nvim Tools
+      texliveFull # latex compiler for vimtex plugin
+      texlab
+      zathura
     ];
   };
 }

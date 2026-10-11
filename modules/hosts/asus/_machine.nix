@@ -19,6 +19,7 @@
     inputs.self.nixosModules.zsh
     # inputs.self.nixosModules.monero
     inputs.self.nixosModules.android
+    inputs.self.nixosModules.cyber
 
     inputs.self.nixosModules.vm
     inputs.self.nixosModules.preservation

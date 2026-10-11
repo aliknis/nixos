@@ -24,3 +24,6 @@ bindkey -M vicmd '/' fzf_history
 
 # Directory Navigation
 eval "$(zoxide init zsh)"
+
+unsetopt HIST_SAVE_BY_COPY
+setopt HIST_FCNTL_LOCK

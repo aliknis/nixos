@@ -38,6 +38,8 @@ local plugins = {
 	require("plugins.tools.which-key"),
 	require("plugins.tools.dadbod"),
 	require("plugins.tools.toggleterm"),
+	require("plugins.tools.jupytext"),
+	require("plugins.tools.molten"),
 	-- require("plugins.tools.flutter"),
 	-- require("plugins.toTweak.iron"),
 

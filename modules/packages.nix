@@ -13,6 +13,10 @@
     environment.variables.QT_QPA_PLATFORM = "wayland"; # for keepassxc
     xdg.mime.defaultApplications."application/pdf" = "org.pwmt.zathura.desktop"; # Default PDF viewer
 
+    programs.direnv.enable = true;
+    programs.direnv.nix-direnv.enable = true;
+    # silent = true; # optional: stop direnv from printing its "loading..." diff on every cd
+
     environment.systemPackages = with pkgs; [
       kitty
       mpv
@@ -40,6 +44,9 @@
       # opencode
 
       libreoffice
+
+      # University
+      camunda-modeler
     ];
   };
 }

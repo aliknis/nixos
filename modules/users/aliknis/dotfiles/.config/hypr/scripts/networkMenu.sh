@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # network-menu — WiFi & Bluetooth selector via Rofi
 
+#
+# ── Rescan nearbly wifi signals ───────────────────────────────────────────────
+nmcli device wifi rescan
+
 RECENT_FILE="$HOME/.local/state/network-menu-recent"
 MAX_RECENT=5
 

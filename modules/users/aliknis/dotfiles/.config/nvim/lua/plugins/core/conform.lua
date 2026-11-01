@@ -30,6 +30,7 @@ return {
 			dart = { "dart_format" },
 
 			terraform = { "tofu_fmt" },
+			xml = { "xmllint" },
 		},
 	},
 	keys = {

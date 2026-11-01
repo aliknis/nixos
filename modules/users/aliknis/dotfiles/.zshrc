@@ -1,9 +1,8 @@
 # ~/.zshrc - Minimal Zsh configuration
 
 # History Settings
-# HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=20000
+SAVEHIST=20000
 
 # Options
 setopt autocd

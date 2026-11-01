@@ -1,10 +1,16 @@
 { ... }:
 {
   flake.nixosModules.android = { pkgs, config, ... }: {
-    # configuration.nix
+
+    # Waydroid
+    networking.nftables.enable = true;
+    virtualisation.waydroid.enable = true;
+
+    # Android SDK
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
-      android-studio
+      android-studio # Replaced by android-cli
+      android-cli
       android-tools
     ];
 

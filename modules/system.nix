@@ -8,7 +8,10 @@
       "flakes"
     ];
 
-    nix.gc.automatic = true;
+    services.logind.settings.Login.HandlePowerKey = "hibernate";
+    services.logind.settings.Login.HandlePowerKeyLongPress = "poweroff"; # optional: what a long press does
+
+    # nix.gc.automatic = true;
     nix.optimise.automatic = true;
 
     time.timeZone = "Africa/Tunis";

@@ -9,13 +9,13 @@
     networking.firewall.allowedUDPPorts = [ ];
 
     sops.secrets.tailscale_key = { };
-    services.resolved.enable = true;
-    services.tailscale = {
-      enable = true;
-      authKeyFile = config.sops.secrets.tailscale_key.path;
-      # extraUpFlags = [ "--ssh" ];
-    };
-    networking.firewall.trustedInterfaces = [ "tailscale0" ];
+    # services.resolved.enable = true;
+    # services.tailscale = {
+    #   enable = true;
+    #   authKeyFile = config.sops.secrets.tailscale_key.path;
+    #   # extraUpFlags = [ "--ssh" ];
+    # };
+    # networking.firewall.trustedInterfaces = [ "tailscale0" ];
 
     # networking.wg-quick.interfaces.wg0 = {
     #   address = [ "10.10.10.4/24" ];

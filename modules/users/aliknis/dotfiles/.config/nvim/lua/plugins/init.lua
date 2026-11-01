@@ -40,6 +40,7 @@ local plugins = {
 	require("plugins.tools.toggleterm"),
 	require("plugins.tools.jupytext"),
 	require("plugins.tools.molten"),
+	require("plugins.tools.csvview"),
 	-- require("plugins.tools.flutter"),
 	-- require("plugins.toTweak.iron"),
 

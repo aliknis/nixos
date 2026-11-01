@@ -2,8 +2,8 @@
 {
   flake.nixosModules.cyber = { pkgs, config, ... }: {
 
-    # programs.wireshark.enable = true;
-    # programs.wireshark.package = pkgs.wireshark;
+    programs.wireshark.enable = true;
+    programs.wireshark.package = pkgs.wireshark;
 
     users.users.${config.username}.extraGroups = [ "wireshark" ];
 

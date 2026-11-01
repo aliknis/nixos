@@ -21,6 +21,13 @@
       clang
       clang-tools
 
+      # [Java]
+      jdk # Java Development Kit
+      jdt-language-server # Java LSP
+      google-java-format # Java formatter
+      # gradle
+      # maven
+
       # [Python/Jupyter]
       (python3.withPackages (ps: [
         ps.debugpy # Python Debugger
@@ -61,6 +68,10 @@
       # plantuml
       # mermaid-cli
       # kitty
+
+      # [XML]
+      lemminx
+      libxml2
 
     ];
   };

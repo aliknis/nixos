@@ -23,6 +23,7 @@
         "/var/lib/docker"
         "/var/lib/tailscale" # tailscale connections
         # "/var/lib/jellyfin/"
+        "/var/lib/waydroid"
       ];
 
       files = [

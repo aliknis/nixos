@@ -44,7 +44,8 @@ return {
 				"hyprls", -- hyprland configs
 				-- "texlab", -- Latex
 				-- "dartls", -- Dart for flutter (will be set up by flutter-tools plugin)
-                "tofu_ls"
+				"tofu_ls", -- Terraform/HCL
+				"lemminx",
 			})
 
 			---@type vim.lsp.Config

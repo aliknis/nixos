@@ -46,6 +46,12 @@
           ".local/share/Google"
           ".cache/Google"
 
+          # direnv and tldr
+          ".local/share/direnv"
+          ".cache/tldr"
+          # ".cache/nix"
+
+          ".local/share/waydroid"
         ];
 
         files = [ ".zsh_history" ];

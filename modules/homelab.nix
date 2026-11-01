@@ -21,35 +21,35 @@
 
     # services.forgejo.enable = true;
 
-    services.prometheus = {
-      enable = true;
-      exporters.node = {
-        enable = true;
-        enabledCollectors = [ "systemd" ];
-      };
-      scrapeConfigs = [
-        {
-          job_name = "node";
-          static_configs = [
-            {
-              targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
-            }
-          ];
-        }
-      ];
-      globalConfig.scrape_interval = "15s";
-    };
-
-    services.grafana = {
-      enable = true;
-      settings.server = {
-        http_addr = "127.0.0.1"; # laptop-local only, for now
-        http_port = 3000;
-      };
-      settings.security.secret_key = "$__file{${config.sops.secrets.grafana_secret_key.path}}";
-      settings.security.admin_user = "admin"; # optional, defaults to "admin"
-      settings.security.admin_password = "$__file{${config.sops.secrets.grafana_admin_password.path}}";
-    };
+    # services.prometheus = {
+    #   enable = true;
+    #   exporters.node = {
+    #     enable = true;
+    #     enabledCollectors = [ "systemd" ];
+    #   };
+    #   scrapeConfigs = [
+    #     {
+    #       job_name = "node";
+    #       static_configs = [
+    #         {
+    #           targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
+    #         }
+    #       ];
+    #     }
+    #   ];
+    #   globalConfig.scrape_interval = "15s";
+    # };
+    #
+    # services.grafana = {
+    #   enable = true;
+    #   settings.server = {
+    #     http_addr = "127.0.0.1"; # laptop-local only, for now
+    #     http_port = 3000;
+    #   };
+    #   settings.security.secret_key = "$__file{${config.sops.secrets.grafana_secret_key.path}}";
+    #   settings.security.admin_user = "admin"; # optional, defaults to "admin"
+    #   settings.security.admin_password = "$__file{${config.sops.secrets.grafana_admin_password.path}}";
+    # };
 
   };
 }

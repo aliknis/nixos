@@ -7,6 +7,7 @@ return {
 	dependencies = {
 		{
 			"3rd/image.nvim",
+			build = false,
 			opts = {
 				backend = "kitty",
 				-- use the ImageMagick CLI (`magick`) instead of the magick Lua rock
@@ -33,6 +34,7 @@ return {
 		map("n", "<localleader>mi", ":MoltenInit<CR>", "init kernel")
 		map("n", "<localleader>rl", ":MoltenEvaluateLine<CR>", "run line")
 		map("v", "<localleader>r", ":<C-u>MoltenEvaluateVisual<CR>gv", "run selection")
+		map("n", "<localleader>e", ":MoltenEvaluateOperator<CR>", "run operator selection")
 		map("n", "<localleader>rc", "vip:<C-u>MoltenEvaluateVisual<CR>gv<Esc>", "run cell (paragraph)")
 		map("n", "<localleader>rr", ":MoltenReevaluateCell<CR>", "re-run cell")
 		map("n", "<localleader>os", ":noautocmd MoltenEnterOutput<CR>", "show / enter output")
@@ -40,6 +42,8 @@ return {
 		map("n", "<localleader>oi", ":MoltenImagePopup<CR>", "open image in popup")
 		map("n", "<localleader>mn", ":MoltenNext<CR>", "next cell")
 		map("n", "<localleader>mp", ":MoltenPrev<CR>", "previous cell")
+
+		map("n", "<localleader>rd", ":MoltenDelete<CR>", "molten delete cell")
 
 		-- Auto-start the python3 kernel when a notebook is opened (once per buffer)
 		vim.api.nvim_create_autocmd("BufWinEnter", {

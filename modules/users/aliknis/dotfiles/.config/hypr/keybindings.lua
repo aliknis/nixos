@@ -37,7 +37,7 @@ local screenshot =
 local screencapture =
 	'mkdir -p ~/Pictures/screenshots ; grim -g "$(slurp)" - | tee ~/Pictures/screenshots/$(date +%Y-%m-%d_%Hh%Mm%Ss)_slurp.png | wl-copy --type image/png'
 local earphones =
-	"bluetoothctl info 54:84:50:E3:2D:90 | grep -q 'Connected: yes' && bluetoothctl disconnect 54:84:50:E3:2D:90 || bluetoothctl connect 54:84:50:E3:2D:90"
+	"bluetoothctl info 00:13:D6:30:7C:1F | grep -q 'Connected: yes' && bluetoothctl disconnect 00:13:D6:30:7C:1F || bluetoothctl connect 00:13:D6:30:7C:1F"
 local extracttext = 'grim -g "$(slurp)" - | tesseract stdin stdout | wl-copy'
 
 -------------------------
@@ -162,15 +162,9 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -------------------------
 
 hl.bind(mainMod .. " + m", fn.cycle_layout)
-hl.bind(
-	mainMod .. " + o",
-	fn.layout_bind({
-		monocle = hl.dsp.layout("cycleprev"),
-		master = hl.dsp.layout("swapwithmaster master"),
-	})
-)
-hl.bind(mainMod .. " + r", hl.dsp.layout("cyclenext"))
-hl.bind(mainMod .. " + SHIFT + r", hl.dsp.layout("cycleprev"))
+hl.bind( mainMod .. " + o", fn.layout_bind({ monocle = hl.dsp.layout("cycleprev"), master = hl.dsp.layout("swapwithmaster master") }))
+hl.bind(mainMod .. " + r", fn.layout_bind({ monocle = hl.dsp.layout("cyclenext"), master = hl.dsp.layout("rollnext") }))
+hl.bind( mainMod .. " + SHIFT + r", fn.layout_bind({ monocle = hl.dsp.layout("cycleprev"), master = hl.dsp.layout("rollprev") }))
 hl.bind(mainMod .. " + SHIFT + u", hl.dsp.window.swap({ direction = "u" }))
 hl.bind(mainMod .. " + SHIFT + e", hl.dsp.window.swap({ direction = "d" }))
 hl.bind(mainMod .. " + SHIFT + l", hl.dsp.layout("addmaster"))

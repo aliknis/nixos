@@ -20,8 +20,23 @@ function y() {
 	command rm -f -- "$tmp"
 }
 
+alias stayup='systemd-inhibit --what=handle-lid-switch --who="Download" --why="Preventing sleep during download" --mode=block sleep infinity'
 # Temporary frequently used aliases
 
 # connect to adb wirelessly
-alias adbc='adb tcpip 5000; adb connect $(ip route | awk "NR==1 {print \$3}"):5000'
+alias adbc='adb tcpip 5555; adb connect $(ip route | awk "NR==1 {print \$3}"):5555'
 
+waydev() { waydroid adb connect && export ANDROID_SERIAL=$(waydroid status | awk '/IP address/ {print $NF}'):5555 }
+alias wifidev='export ANDROID_SERIAL=$(ip route | awk "NR==1 {print \$3}"):5555'
+alias phonedev='export ANDROID_SERIAL=48281FDAS002XG'
+alias emudev='export ANDROID_SERIAL=emulator-5554'
+alias undev='export ANDROID_SERIAL=""'
+
+
+function createAndroidProject() {
+    cd ~/Projects/ISIMM/TPs/AppMobile;
+    android create empty-activity --name=$1 -o=$1;
+    cp -r template/. $1;
+    cd $1;
+    rm local.properties;
+}

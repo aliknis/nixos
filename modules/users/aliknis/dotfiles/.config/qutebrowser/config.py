@@ -8,7 +8,7 @@ config.load_autoconfig()
 # Color Scheme for Qutebrowser
 # config.source("themes/tokyonight.py")
 config.source("themes/gruvbox.py")
-config.bind(',b', 'config-cycle colors.webpage.bg white "#282828"')
+config.bind(",b", 'config-cycle colors.webpage.bg white "#282828"')
 
 c.fonts.default_family = "JetBrains Mono Nerd Font"
 
@@ -56,7 +56,7 @@ c.content.blocking.adblock.lists = [
 # ─── Privacy / Security ────────────────────────────────────────────────────────
 
 # c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"  # to allow for google account login
-c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36'
+c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
 # config.set('content.headers.user_agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36' )
 
 # Disable JavaScript by default
@@ -94,8 +94,10 @@ c.scrolling.smooth = True
 # ─── Downloads ─────────────────────────────────────────────────────────────────
 import os
 
-os.makedirs(os.path.expanduser("~/Downloads"), exist_ok=True) # Ensure ~/Downloads folder exist to avoid qutebrowser startup warning on new machines
-c.downloads.location.directory = "~/Downloads" # Change default download directory (default is '~/Downloads', but set explicitly)
+os.makedirs(
+    os.path.expanduser("~/Downloads"), exist_ok=True
+)  # Ensure ~/Downloads folder exist to avoid qutebrowser startup warning on new machines
+c.downloads.location.directory = "~/Downloads"  # Change default download directory (default is '~/Downloads', but set explicitly)
 
 
 # ─── External Editor ───────────────────────────────────────────────────────────
@@ -130,8 +132,14 @@ c.url.searchengines = {
 config.bind(";w", "hint links spawn mpv {hint-url}")
 config.bind(",w", "spawn mpv {url}")
 
-config.bind( ";v", "hint links spawn kitty -e yt-dlp -P '~/Videos' {hint-url}",)
-config.bind( ",d", "           spawn kitty -e yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best' -P '~/Videos' {url}",)
+config.bind(
+    ";v",
+    "hint links spawn kitty -e yt-dlp -P '~/Videos' {hint-url}",
+)
+config.bind(
+    ",d",
+    "           spawn kitty -e yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best' -P '~/Videos' {url}",
+)
 
 # Example: Canva uses Ctrl+Alt+p
 # config.bind("<F5>", "fake-key <Ctrl-Alt-p>")

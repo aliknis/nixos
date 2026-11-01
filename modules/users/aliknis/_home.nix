@@ -35,7 +35,7 @@ in
   gtk.iconTheme.name = "Papirus-Dark";
   gtk.iconTheme.package = pkgs.papirus-icon-theme;
   gtk.colorScheme = "dark";
-  gtk.gtk4.theme = null;
+  # gtk.gtk4.theme = null;
 
   home.pointerCursor.enable = true;
   home.pointerCursor.name = "Bibata-Modern-Ice";

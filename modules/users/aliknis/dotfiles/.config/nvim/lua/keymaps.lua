@@ -10,6 +10,7 @@ vim.keymap.set("n", "<leader>a", "ggVG", { noremap = true, silent = true, desc =
 vim.keymap.set("n", "<leader>n", ":set relativenumber!<CR>", { desc = "Toggle relative numbers" })
 vim.keymap.set("n", "<leader>q", ":q!<CR>", { noremap = true, silent = true, desc = "Quit without saving" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "Save" })
+vim.keymap.set("n", "<leader>W", ":noautocmd w<CR>", { noremap = true, silent = true, desc = "Save" })
 
 -- Buffers
 vim.keymap.set("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true, desc = "Delete buffer" })
